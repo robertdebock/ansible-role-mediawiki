@@ -22,7 +22,7 @@ Requirements
 Role Variables
 --------------
 
-- mediawiki_parameter: Description of values. [default: value]
+- mediawiki_version: The version to install. This variable is a combination of mediawiki_major, mediawiki_minor and mediawiki_release.
 
 Dependencies
 ------------
@@ -39,7 +39,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge|yes|yes|yes|
 |alpine-latest|yes|yes|yes|
 |archlinux|yes|yes|yes|
-|centos-6|yes|yes|yes|
+|centos-6|no|no|no|
 |centos-latest|yes|yes|yes|
 |debian-latest|yes|yes|yes|
 |debian-stable|yes|yes|yes|
@@ -62,8 +62,10 @@ Example Playbook
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
     - role: robertdebock.mediawiki
-      mediawiki_parameter: value
 ```
 
 To install this role:
@@ -72,8 +74,13 @@ To install this role:
 Sample roles/requirements.yml: (install with `ansible-galaxy install -r roles/requirements.yml
 ```
 ---
-- name: robertdebock.bootstrap
-- name: robertdebock.mediawiki
+- robertdebock.bootstrap
+- robertdebock.buildtools
+- robertdebock.epel
+- robertdebock.scl
+- robertdebock.python_pip
+- robertdebock.php
+- robertdebock.httpd
 ```
 
 License
