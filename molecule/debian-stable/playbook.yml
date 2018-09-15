@@ -6,4 +6,6 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
     - role: ansible-role-mediawiki
