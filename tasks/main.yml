@@ -1,0 +1,30 @@
+---
+# tasks file for mediawiki
+- name: load default variables
+  include_vars:
+    file: default.yml
+
+- name: load os-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - default.yml
+
+- name: create directory
+  file:
+    path: "{{ mediawiki_destination }}"
+    state: directory
+
+- name: install software
+  unarchive:
+    src: "{{ mediawiki_source }}"
+    dest: "{{ mediawiki_destination }}"
+    remote_src: yes
+    creates: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
+
+- name: link software
+  file:
+    src: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
+    dest: "{{ mediawiki_destination }}/mediawiki"
+    state: link

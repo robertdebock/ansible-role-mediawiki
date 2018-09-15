@@ -1,0 +1,6 @@
+---
+# defaults file for mediawiki
+mediawiki_major: 1
+mediawiki_minor: 31
+mediawiki_release: 0
+mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_release }}"
