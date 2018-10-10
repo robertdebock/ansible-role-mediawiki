@@ -1,3 +1,0 @@
----
-# vars file for mediawiki
-mediawiki_destination: /var/www/{{ httpd_servername | default(ansible_fqdn) }}
