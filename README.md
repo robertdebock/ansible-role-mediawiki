@@ -5,40 +5,70 @@ mediawiki
 
 Provides mediawiki for your system.
 
-[Unit tests](https://travis-ci.org/robertdebock/ansible-role-mediawiki) are done on every commit and periodically.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-mediawiki/issues)
+Example Playbook
+----------------
 
-To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+This example is taken from `molecule/default/playbook.yml`:
 ```
-pip install molecule
-molecule test
+---
+- name: Converge
+  hosts: all
+  gather_facts: false
+  become: true
+
+  roles:
+    - robertdebock.bootstrap
+    - robertdebock.epel
+    - robertdebock.python_pip
+    - robertdebock.httpd
+    - robertdebock.mediawiki
+
 ```
-There are many scenarios available, please have a look in the `molecule/` directory.
+
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```
+---
+# defaults file for mediawiki
+
+# The version (major.minor.release) to install.
+mediawiki_major: 1
+mediawiki_minor: 31
+mediawiki_release: 1
+
+mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_release }}"
+
+```
+
+Requirements
+------------
+
+- Access to a repository containing packages, likely on the internet.
+- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
+
+The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
+
+---
+- robertdebock.bootstrap
+- robertdebock.buildtools
+- robertdebock.epel
+- robertdebock.scl
+- robertdebock.python_pip
+- robertdebock.php
+- robertdebock.httpd
+
 
 Context
---------
+-------
+
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
 ![dependencies](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/mediawiki.png "Dependency")
 
-Requirements
-------------
-
-- A system installed with required packages to run Ansible. Hint: [bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap).
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
-
-Role Variables
---------------
-
-- mediawiki_version: The version to install. This variable is a combination of mediawiki_major, mediawiki_minor and mediawiki_release.
-
-Dependencies
-------------
-
-- None known.
 
 Compatibility
 -------------
@@ -65,43 +95,26 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
-Example Playbook
-----------------
+Testing
+-------
 
-```
----
-- name: mediawiki
-  hosts: all
-  gather_facts: no
-  become: yes
+[Unit tests](https://travis-ci.org/robertdebock/ansible-role-mediawiki) are done on every commit and periodically.
 
-  roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.epel
-    - role: robertdebock.python_pip
-    - role: robertdebock.httpd
-    - role: robertdebock.mediawiki
-```
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-mediawiki/issues)
 
-To install this role:
-- Install this role individually using `ansible-galaxy install robertdebock.mediawiki`
+To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+```
+pip install molecule
+molecule test
+```
+There are many specific scenarios available, please have a look in the `molecule/` directory.
 
-Sample roles/requirements.yml: (install with `ansible-galaxy install -r roles/requirements.yml
-```
----
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.epel
-- robertdebock.scl
-- robertdebock.python_pip
-- robertdebock.php
-- robertdebock.httpd
-```
 
 License
 -------
 
-Apache License, Version 2.0
+Apache-2.0
+
 
 Author Information
 ------------------
