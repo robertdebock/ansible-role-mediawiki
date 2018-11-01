@@ -5,8 +5,8 @@
   become: true
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.epel
-    - role: robertdebock.python_pip
-    - role: robertdebock.httpd
-    - role: ansible-role-mediawiki
+    - robertdebock.bootstrap
+    - robertdebock.epel
+    - robertdebock.python_pip
+    - robertdebock.httpd
+    - ansible-role-mediawiki

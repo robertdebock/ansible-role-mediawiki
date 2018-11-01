@@ -2,23 +2,18 @@
 # tasks file for mediawiki
 - name: create directory
   file:
-    path: "{{ mediawiki_destination[ansible_distribution]
-          | default(mediawiki_destination['default']) }}"
+    path: "{{ mediawiki_destination }}"
     state: directory
 
 - name: install mediawiki
   unarchive:
     src: "{{ mediawiki_source }}"
-    dest: "{{ mediawiki_destination[ansible_distribution]
-          | default(mediawiki_destination['default']) }}"
+    dest: "{{ mediawiki_destination }}"
     remote_src: yes
-    creates: "{{ mediawiki_destination[ansible_distribution]
-          | default(mediawiki_destination['default']) }}/mediawiki-{{ mediawiki_version }}"
+    creates: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
 
 - name: link mediawiki
   file:
-    src: "{{ mediawiki_destination[ansible_distribution]
-          | default(mediawiki_destination['default']) }}/mediawiki-{{ mediawiki_version }}"
-    dest: "{{ mediawiki_destination[ansible_distribution]
-          | default(mediawiki_destination['default']) }}/mediawiki"
+    src: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
+    dest: "{{ mediawiki_destination }}/mediawiki"
     state: link

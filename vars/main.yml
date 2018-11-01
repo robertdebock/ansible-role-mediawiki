@@ -2,9 +2,11 @@
 # vars file for mediawiki
 mediawiki_source: "https://releases.wikimedia.org/mediawiki/{{ mediawiki_major}}.{{ mediawiki_minor }}/mediawiki-{{ mediawiki_version }}.tar.gz"
 
-mediawiki_destination:
+_mediawiki_destination:
   default: /var/www/html
   Alpine: /var/www/{{ httpd_servername | default(ansible_fqdn) }}
   Archlinux: /srv/http
   openSUSE Leap: /src/www/htdocs
   openSUSE Tumbleweed: /src/www/htdocs
+
+mediawiki_destination: "{{ mediawiki_destination[ansible_distribution] | default(mediawiki_destination['default']) }}"
