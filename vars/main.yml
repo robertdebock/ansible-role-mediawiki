@@ -9,4 +9,4 @@ _mediawiki_destination:
   openSUSE Leap: /src/www/htdocs
   openSUSE Tumbleweed: /src/www/htdocs
 
-mediawiki_destination: "{{ mediawiki_destination[ansible_distribution] | default(mediawiki_destination['default']) }}"
+mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
