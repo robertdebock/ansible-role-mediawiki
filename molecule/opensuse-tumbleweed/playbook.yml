@@ -1,11 +1,12 @@
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
-  become: true
+  gather_facts: no
+  become: yes
 
   roles:
     - robertdebock.bootstrap
+    - robertdebock.epel
     - robertdebock.python_pip
     - robertdebock.httpd
     - ansible-role-mediawiki

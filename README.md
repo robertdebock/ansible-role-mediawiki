@@ -3,8 +3,7 @@ mediawiki
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-mediawiki.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-mediawiki)
 
-Provides mediawiki for your system.
-
+The purpose of this role is to install and configure mediawiki on your system.
 
 Example Playbook
 ----------------
