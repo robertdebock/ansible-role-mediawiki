@@ -15,6 +15,10 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
+  inventory:
+    group_vars:
+      all:
+        httpd_ignore_docker: no
 scenario:
   name: alpine-edge
 verifier:
