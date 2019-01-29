@@ -13,14 +13,15 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
-  become: true
+  gather_facts: no
+  become: yes
 
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.python_pip
     - robertdebock.httpd
+    - robertdebock.php
     - robertdebock.mediawiki
 
 ```
@@ -42,6 +43,9 @@ mediawiki_release: 1
 
 mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_release }}"
 
+# To update all packages installed by this roles, set `mediawiki_package_state` to `latest`.
+mediawiki_package_state: present
+
 ```
 
 Requirements
@@ -57,7 +61,6 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.bootstrap
 - robertdebock.buildtools
 - robertdebock.epel
-- robertdebock.scl
 - robertdebock.python_pip
 - robertdebock.php
 - robertdebock.httpd
