@@ -6,9 +6,6 @@ _mediawiki_requirements:
     - php-xml
   Archlinux:
     - php
-  openSUSE Leap:
-    - php7-mbstring
-    - php7-xml
 
 mediawiki_requirements: "{{ _mediawiki_requirements[ansible_distribution] | default(_mediawiki_requirements['default']) }}"
 
