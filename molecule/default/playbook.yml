@@ -9,4 +9,5 @@
     - robertdebock.epel
     - robertdebock.python_pip
     - robertdebock.httpd
+    - robertdebock.php
     - ansible-role-mediawiki

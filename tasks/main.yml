@@ -5,6 +5,16 @@
     path: "{{ mediawiki_destination }}"
     state: directory
 
+- name: install requirements
+  package:
+    name: "{{ mediawiki_requirements }}"
+    state: "{{ mediawiki_package_state }}"
+  register: mediawiki_install_mediawiki
+  until: mediawiki_install_mediawiki is succeeded
+  retries: 3
+  notify:
+    - restart httpd
+
 - name: install mediawiki
   unarchive:
     src: "{{ mediawiki_source }}"

@@ -1,5 +1,17 @@
 ---
 # vars file for mediawiki
+_mediawiki_requirements:
+  default:
+    - php-mbstring
+    - php-xml
+  Archlinux:
+    - php
+  openSUSE Leap:
+    - php7-mbstring
+    - php7-xml
+
+mediawiki_requirements: "{{ _mediawiki_requirements[ansible_distribution] | default(_mediawiki_requirements['default']) }}"
+
 mediawiki_source: "https://releases.wikimedia.org/mediawiki/{{ mediawiki_major}}.{{ mediawiki_minor }}/mediawiki-{{ mediawiki_version }}.tar.gz"
 
 _mediawiki_destination:
