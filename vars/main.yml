@@ -4,6 +4,7 @@ _mediawiki_requirements:
   default:
     - php-mbstring
     - php-xml
+    - php-mysql
   Archlinux:
     - php
 

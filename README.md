@@ -16,12 +16,22 @@ This example is taken from `molecule/default/playbook.yml`:
   gather_facts: no
   become: yes
 
+  vars:
+    mysql_databases:
+      - name: mediawiki
+
+    mysql_users:
+      - name: mediawiki
+        password: m3d14w1k1
+        priv: "mediawiki.*:ALL"
+
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.python_pip
     - robertdebock.httpd
     - robertdebock.php
+    - robertdebock.mysql
     - robertdebock.mediawiki
 
 ```
@@ -63,6 +73,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.epel
 - robertdebock.python_pip
 - robertdebock.php
+- robertdebock.mysql
 - robertdebock.httpd
 
 ```

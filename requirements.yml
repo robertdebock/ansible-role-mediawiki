@@ -4,4 +4,5 @@
 - robertdebock.epel
 - robertdebock.python_pip
 - robertdebock.php
+- robertdebock.mysql
 - robertdebock.httpd
