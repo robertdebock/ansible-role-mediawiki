@@ -23,6 +23,7 @@ provisioner:
     group_vars:
       all:
         httpd_ignore_docker: no
+        mysql_ignore_docker: no
 scenario:
   name: fedora-rawhide
 verifier:
