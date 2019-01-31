@@ -5,6 +5,10 @@ _mediawiki_requirements:
     - php-mbstring
     - php-xml
     - php-mysql
+  Alpine:
+    - php-mysqli
+    - php-mbstring
+    - php-xml
   Fedora:
     - php-mbstring
     - php-pdo_mysql
