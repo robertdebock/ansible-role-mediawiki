@@ -2,14 +2,17 @@
 # vars file for mediawiki
 _mediawiki_requirements:
   default:
+    - php-json
     - php-mbstring
     - php-xml
     - php-mysql
   Alpine:
+    - php-json
     - php-mysqli
     - php-mbstring
     - php-xml
   Fedora:
+    - php-json
     - php-mbstring
     - php-pdo_mysql
     - php-xml
