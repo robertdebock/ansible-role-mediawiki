@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: mediawiki-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: mediawiki-ubuntu-artful
-    image: ubuntu:artful
+  - name: mediawiki-ubuntu-latest
+    image: ubuntu:latest
+  - name: mediawiki-ubuntu-rolling
+    image: ubuntu:rolling
   - name: mediawiki-ubuntu-devel
     image: ubuntu:devel
   - name: mediawiki-ubuntu-latest
