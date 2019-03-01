@@ -28,6 +28,5 @@ _mediawiki_destination:
   Alpine: /var/www/{{ httpd_servername | default(ansible_fqdn) }}
   Archlinux: /srv/http
   openSUSE Leap: /src/www/htdocs
-  openSUSE Tumbleweed: /src/www/htdocs
 
 mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
