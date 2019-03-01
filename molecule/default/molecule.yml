@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: mediawiki-opensuse-leap
     image: opensuse:leap
-  - name: mediawiki-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: mediawiki-ubuntu-latest
     image: ubuntu:latest
   - name: mediawiki-ubuntu-rolling
