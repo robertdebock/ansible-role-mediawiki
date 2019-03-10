@@ -22,7 +22,3 @@ provisioner:
         mysql_ignore_docker: no
 scenario:
   name: alpine-edge
-verifier:
-  name: goss
-  lint:
-    name: yamllint
