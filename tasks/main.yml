@@ -8,7 +8,7 @@
 - name: install requirements
   package:
     name: "{{ mediawiki_requirements }}"
-    state: "{{ mediawiki_package_state }}"
+    state: present
   register: mediawiki_install_mediawiki
   until: mediawiki_install_mediawiki is succeeded
   retries: 3

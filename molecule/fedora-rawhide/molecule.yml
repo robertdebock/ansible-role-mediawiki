@@ -3,10 +3,10 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: mediawiki-fedora-rawhide
     image: fedora:rawhide
@@ -16,13 +16,5 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
-  inventory:
-    host_vars:
-      mediawiki-fedora-rawhide:
-        ansible_python_interpreter: /usr/bin/python3
-    group_vars:
-      all:
-        httpd_ignore_docker: no
-        mysql_ignore_docker: no
 scenario:
   name: fedora-rawhide

@@ -3,10 +3,10 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: mediawiki-alpine-edge
     image: alpine:edge
@@ -15,10 +15,5 @@ provisioner:
   name: ansible
   lint:
     name: ansible-lint
-  inventory:
-    group_vars:
-      all:
-        httpd_ignore_docker: no
-        mysql_ignore_docker: no
 scenario:
   name: alpine-edge

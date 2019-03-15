@@ -33,7 +33,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.php
     - robertdebock.mysql
     - robertdebock.mediawiki
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -52,10 +51,6 @@ mediawiki_minor: 31
 mediawiki_release: 1
 
 mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_release }}"
-
-# To update all packages installed by this roles, set `mediawiki_package_state` to `latest`.
-mediawiki_package_state: present
-
 ```
 
 Requirements
