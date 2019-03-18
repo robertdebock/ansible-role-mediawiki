@@ -1,5 +1,5 @@
 ---
-- name: Converge
+- name: Prepare
   hosts: all
   gather_facts: no
   become: yes
@@ -20,4 +20,3 @@
     - robertdebock.httpd
     - robertdebock.php
     - robertdebock.mysql
-    - ansible-role-mediawiki

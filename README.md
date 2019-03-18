@@ -13,6 +13,18 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - robertdebock.mediawiki
+```
+
+The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
+```yaml
+---
+- name: Prepare
+  hosts: all
   gather_facts: no
   become: yes
 
@@ -32,7 +44,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.httpd
     - robertdebock.php
     - robertdebock.mysql
-    - robertdebock.mediawiki
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
