@@ -44,4 +44,5 @@ galaxy_info:
     - system
     - ubuntu
 
-dependencies: []
+dependencies:
+  - robertdebock.httpd
