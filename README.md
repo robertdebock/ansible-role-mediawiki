@@ -17,6 +17,7 @@ This example is taken from `molecule/default/playbook.yml`:
   gather_facts: yes
 
   roles:
+    - robertdebock.httpd
     - robertdebock.mediawiki
 ```
 
@@ -41,6 +42,7 @@ The machine you are running this on, may need to be prepared. Tests have been do
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.python_pip
+    - robertdebock.buildtools
     - robertdebock.httpd
     - robertdebock.php
     - robertdebock.mysql
