@@ -13,9 +13,13 @@
         password: m3d14w1k1
         priv: "mediawiki.*:ALL"
 
+    remi_enabled_repositories:
+      - php73
+
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
+    - robertdebock.remi
     - robertdebock.python_pip
     - robertdebock.buildtools
     - robertdebock.httpd
