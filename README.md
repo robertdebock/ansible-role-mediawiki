@@ -39,9 +39,13 @@ The machine you are running this on, may need to be prepared.
         password: m3d14w1k1
         priv: "mediawiki.*:ALL"
 
+    remi_enabled_repositories:
+      - php74
+
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
+    - robertdebock.remi
     - robertdebock.python_pip
     - robertdebock.buildtools
     - robertdebock.httpd
@@ -84,6 +88,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.php
 - robertdebock.mysql
 - robertdebock.httpd
+- robertdebock.remi
 
 ```
 
