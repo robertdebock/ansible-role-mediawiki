@@ -7,3 +7,9 @@
   roles:
     - robertdebock.httpd
     - ansible-role-mediawiki
+
+  tasks:
+    - name: test mediawiki installation
+      shell: php /var/www/html/mediawiki/index.php && touch done
+      args:
+        creates: done
