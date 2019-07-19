@@ -14,7 +14,7 @@
         priv: "mediawiki.*:ALL"
 
     remi_enabled_repositories:
-      - php74
+      - php73
 
   roles:
     - robertdebock.bootstrap

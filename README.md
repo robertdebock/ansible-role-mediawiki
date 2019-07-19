@@ -40,7 +40,7 @@ The machine you are running this on, may need to be prepared.
         priv: "mediawiki.*:ALL"
 
     remi_enabled_repositories:
-      - php74
+      - php73
 
   roles:
     - robertdebock.bootstrap
