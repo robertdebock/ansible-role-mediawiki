@@ -33,27 +33,24 @@ The machine you are running this on, may need to be prepared.
   gather_facts: no
   become: yes
 
-  vars:
-    mysql_databases:
-      - name: mediawiki
-
-    mysql_users:
-      - name: mediawiki
-        password: m3d14w1k1
-        priv: "mediawiki.*:ALL"
-
-    remi_enabled_repositories:
-      - php73
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.remi
-    - robertdebock.python_pip
-    - robertdebock.buildtools
-    - robertdebock.httpd
-    - robertdebock.php
-    - robertdebock.mysql
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.epel
+    - role: robertdebock.remi
+      remi_enabled_repositories:
+        - php73
+    - role: robertdebock.python_pip
+    - role: robertdebock.buildtools
+    - role: robertdebock.httpd
+    - role: robertdebock.php
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: mediawiki
+      mysql_users:
+        - name: mediawiki
+          password: m3d14w1k1
+          priv: "mediawiki.*:ALL"
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -85,6 +82,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.core_dependencies
 - robertdebock.buildtools
 - robertdebock.epel
 - robertdebock.python_pip
@@ -122,8 +120,8 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|yes|yes|yes*|
 |alpine-latest|yes|yes|yes*|
 |archlinux|yes|yes|yes*|
-|centos-7|no|no|no*|
-|centos-latest|yes|yes|yes*|
+|centos-7|yes|yes|yes*|
+|centos-latest|no|no|no*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
 |fedora-latest|yes|yes|yes*|
@@ -135,6 +133,14 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| CentOS latest | No package php73 available. |
 
 Included version(s)
 -------------------

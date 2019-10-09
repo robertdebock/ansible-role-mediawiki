@@ -1,0 +1,4 @@
+---
+exceptions:
+  - variation: CentOS latest
+    reason: No package php73 available.

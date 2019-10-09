@@ -4,24 +4,21 @@
   gather_facts: no
   become: yes
 
-  vars:
-    mysql_databases:
-      - name: mediawiki
-
-    mysql_users:
-      - name: mediawiki
-        password: m3d14w1k1
-        priv: "mediawiki.*:ALL"
-
-    remi_enabled_repositories:
-      - php73
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.remi
-    - robertdebock.python_pip
-    - robertdebock.buildtools
-    - robertdebock.httpd
-    - robertdebock.php
-    - robertdebock.mysql
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.epel
+    - role: robertdebock.remi
+      remi_enabled_repositories:
+        - php73
+    - role: robertdebock.python_pip
+    - role: robertdebock.buildtools
+    - role: robertdebock.httpd
+    - role: robertdebock.php
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: mediawiki
+      mysql_users:
+        - name: mediawiki
+          password: m3d14w1k1
+          priv: "mediawiki.*:ALL"
