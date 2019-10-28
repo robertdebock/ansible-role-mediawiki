@@ -123,7 +123,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |debian|unstable|yes|
 |debian|latest|no|
 |centos|latest|no|
-|redhat|latest|no|
 |fedora|latest|no|
 |fedora|rawhide|yes|
 |opensuse|latest|no|
