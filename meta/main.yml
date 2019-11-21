@@ -36,7 +36,6 @@ galaxy_info:
 
   galaxy_tags:
     - mediawiki
-    - alpine
     - centos
     - debian
     - el
