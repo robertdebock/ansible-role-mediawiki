@@ -17,10 +17,9 @@ _mediawiki_requirements:
     - php-pdo_mysql
     - php-xml
   CentOS:
-    - php73-php-json
-    - php73-php-mbstring
-    - php73-php-mysqlnd
-    - php73-php-xml
+    - php-mbstring
+    - php-mysql
+    - php-xml
   Archlinux:
     - php
 

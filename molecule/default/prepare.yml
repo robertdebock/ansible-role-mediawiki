@@ -8,9 +8,6 @@
     - role: robertdebock.bootstrap
     - role: robertdebock.core_dependencies
     - role: robertdebock.epel
-    - role: robertdebock.remi
-      remi_enabled_repositories:
-        - php73
     - role: robertdebock.python_pip
     - role: robertdebock.buildtools
     - role: robertdebock.httpd
