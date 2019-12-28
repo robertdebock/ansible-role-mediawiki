@@ -107,9 +107,8 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |---------|----|
 |amazon|all|
 |alpine|all|
-|archlinux|all|
 |debian|all|
-|el|8|
+|el|7, 8|
 |fedora|all|
 |opensuse|all|
 |ubuntu|artful, bionic|
