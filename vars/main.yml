@@ -24,8 +24,6 @@ _mediawiki_requirements:
     - php-mbstring
     - php-mysqlnd
     - php-xml
-  Archlinux:
-    - php
 
 mediawiki_requirements: "{{ _mediawiki_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default (_mediawiki_requirements[ansible_distribution] | default(_mediawiki_requirements['default'])) }}"
 
@@ -34,7 +32,6 @@ mediawiki_source: "https://releases.wikimedia.org/mediawiki/{{ mediawiki_major}}
 _mediawiki_destination:
   default: /var/www/html
   Alpine: /var/www/{{ httpd_servername | default(ansible_fqdn) }}
-  Archlinux: /srv/http
   openSUSE Leap: /src/www/htdocs
 
 mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
