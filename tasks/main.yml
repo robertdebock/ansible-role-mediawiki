@@ -21,9 +21,16 @@
     dest: "{{ mediawiki_destination }}"
     remote_src: yes
     creates: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
+    setype: httpd_sys_script_rw_t
 
-- name: link mediawiki
+- name: link mediawiki to versioned directory
   file:
     src: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
     dest: "{{ mediawiki_destination }}/mediawiki"
+    state: link
+
+- name: link mediawiki to docroot
+  file:
+    src: "{{ mediawiki_destination }}/mediawiki"
+    dest: "{{ mediawiki_docroot }}/mediawiki"
     state: link

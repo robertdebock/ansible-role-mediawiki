@@ -5,5 +5,5 @@
   gather_facts: yes
 
   roles:
-    - robertdebock.httpd
-    - ansible-role-mediawiki
+    - role: ansible-role-mediawiki
+      mediawiki_destination: /opt

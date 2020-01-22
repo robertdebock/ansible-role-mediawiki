@@ -20,8 +20,8 @@ This example is taken from `molecule/resources/playbook.yml` and is tested on ea
   gather_facts: yes
 
   roles:
-    - robertdebock.httpd
-    - robertdebock.mediawiki
+    - role: robertdebock.mediawiki
+      mediawiki_destination: /opt
 ```
 
 The machine you are running this on, may need to be prepared, I use this playbook to ensure everything is in place to let the role work.
@@ -49,6 +49,21 @@ The machine you are running this on, may need to be prepared, I use this playboo
           priv: "mediawiki.*:ALL"
 ```
 
+After running this role, this playbook runs to verify that everything works, this may be a good example how you can use this role.
+```yaml
+---
+- name: Verify
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: connect to mediawiki
+      get_url:
+        url: https://localhost/mediawiki
+        dest: /tmp/whatever
+        validate_certs: no
+```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
@@ -66,6 +81,14 @@ mediawiki_minor: 31
 mediawiki_release: 1
 
 mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_release }}"
+
+# Where to install mediawiki. You can use this pattern to install to a default
+# location that differs per distribution, see `vars/main.yml`:
+# "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
+# Change this to a simple string that refers to a path, for example:
+# "/data/mediawiki".
+
+mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
 ```
 
 Requirements

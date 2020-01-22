@@ -34,4 +34,4 @@ _mediawiki_destination:
   Alpine: /var/www/{{ httpd_servername | default(ansible_fqdn) }}
   openSUSE Leap: /src/www/htdocs
 
-mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
+mediawiki_docroot: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
