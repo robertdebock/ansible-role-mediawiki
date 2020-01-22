@@ -17,10 +17,12 @@ _mediawiki_requirements:
     - php-pdo_mysql
     - php-xml
   CentOS-7:
+    - php-json
     - php-mbstring
     - php-mysql
     - php-xml
   CentOS:
+    - php-json
     - php-mbstring
     - php-mysqlnd
     - php-xml
