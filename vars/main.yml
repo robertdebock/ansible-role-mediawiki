@@ -34,6 +34,6 @@ mediawiki_source: "https://releases.wikimedia.org/mediawiki/{{ mediawiki_major}}
 _mediawiki_destination:
   default: /var/www/html
   Alpine: /var/www/{{ httpd_servername | default(ansible_fqdn) }}
-  Suse: /src/www/htdocs
+  Suse: /srv/www/htdocs
 
 mediawiki_docroot: "{{ _mediawiki_destination[ansible_os_family] | default(_mediawiki_destination['default']) }}"
