@@ -147,7 +147,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| CentOS latest | No package php73 available. |
+| centos:7 | PHP is too old for mediawiki 1.31.1. |
 
 Included version(s)
 -------------------
