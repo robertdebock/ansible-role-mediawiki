@@ -20,7 +20,6 @@ env:
     - image="fedora" tag="30"
     - image="fedora" tag="latest"
     - image="fedora" tag="rawhide"
-    - image="opensuse" tag="latest"
     - image="ubuntu" tag="latest"
 
 cache:
