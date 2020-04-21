@@ -125,7 +125,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|debian|all|
+|debian|buster|
 |el|8|
 |fedora|all|
 |ubuntu|bionic|
