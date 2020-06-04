@@ -1,4 +1,4 @@
-# mediawiki
+# [mediawiki](#mediawiki)
 
 Install and configure mediawiki on your system.
 
@@ -6,7 +6,7 @@ Install and configure mediawiki on your system.
 |------|------|-------|---------|
 |[![travis](https://travis-ci.com/robertdebock/ansible-role-mediawiki.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-mediawiki)|[![github](https://github.com/robertdebock/ansible-role-mediawiki/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-mediawiki/actions)|[![quality](https://img.shields.io/ansible/quality/29572)](https://galaxy.ansible.com/robertdebock/mediawiki)|[![downloads](https://img.shields.io/ansible/role/d/29572)](https://galaxy.ansible.com/robertdebock/mediawiki)|
 
-## Example Playbook
+## [Example Playbook](#example-playbook)
 
 This example is taken from `molecule/resources/converge.yml` and is tested on each push, pull request and release.
 ```yaml
@@ -35,6 +35,10 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.epel
     - role: robertdebock.python_pip
     - role: robertdebock.buildtools
+    - role: robertdebock.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
     - role: robertdebock.httpd
     - role: robertdebock.php
     - role: robertdebock.mysql
@@ -64,7 +68,7 @@ For verification `molecule/resources/verify.yml` run after the role has been app
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
-## Role Variables
+## [Role Variables](#role-variables)
 
 These variables are set in `defaults/main.yml`:
 ```yaml
@@ -87,7 +91,7 @@ mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_rel
 mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
 ```
 
-## Requirements
+## [Requirements](#requirements)
 
 - Access to a repository containing packages, likely on the internet.
 - A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
@@ -100,28 +104,29 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.core_dependencies
 - robertdebock.buildtools
 - robertdebock.epel
-- robertdebock.python_pip
-- robertdebock.php
-- robertdebock.mysql
 - robertdebock.httpd
+- robertdebock.mysql
+- robertdebock.openssl
+- robertdebock.php
+- robertdebock.python_pip
 
 ```
 
-## Dependencies
+## [Dependencies](#dependencies)
 
 Most roles require some kind of preparation, this is done in `molecule/default/prepare.yml`. This role has a "hard" dependency on the following roles:
 
 - robertdebock.httpd
-## Context
+## [Context](#context)
 
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
 ![dependencies](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/mediawiki.png "Dependency")
 
-## Compatibility
+## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/):
+This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
 
 |container|tags|
 |---------|----|
@@ -136,7 +141,7 @@ The minimum version of Ansible required is 2.8 but tests have been done to:
 - The current version.
 - The development version.
 
-## Exceptions
+## [Exceptions](#exceptions)
 
 Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
 
@@ -144,13 +149,13 @@ Some variarations of the build matrix do not work. These are the variations and 
 |---------------------------|------------------------|
 | centos:7 | PHP is too old for mediawiki 1.31.1. |
 
-## Included version(s)
+## [Included version(s)](#included-versions)
 
 This role [refers to a version](https://github.com/robertdebock/ansible-role-mediawiki/blob/master/defaults/main.yml) released by MediaWiki. Check the released version(s) here:
 - [mediawiki](https://www.mediawiki.org/wiki/Download).
 
 This version reference means a role may get outdated. Monthly tests occur to see if [bit-rot](https://en.wikipedia.org/wiki/Software_rot) occured. If you however find a problem, please create an issue, I'll get on it as soon as possible.
-## Testing
+## [Testing](#testing)
 
 [Unit tests](https://travis-ci.com/robertdebock/ansible-role-mediawiki) are done on every commit, pull request, release and periodically.
 
@@ -184,12 +189,12 @@ image="centos" tox
 image="debian" tag="stable" tox
 ```
 
-## License
+## [License](#license)
 
 Apache-2.0
 
 
-## Author Information
+## [Author Information](#author-information)
 
 [Robert de Bock](https://robertdebock.nl/)
 

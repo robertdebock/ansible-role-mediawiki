@@ -3,7 +3,8 @@
 - robertdebock.core_dependencies
 - robertdebock.buildtools
 - robertdebock.epel
-- robertdebock.python_pip
-- robertdebock.php
-- robertdebock.mysql
 - robertdebock.httpd
+- robertdebock.mysql
+- robertdebock.openssl
+- robertdebock.php
+- robertdebock.python_pip
