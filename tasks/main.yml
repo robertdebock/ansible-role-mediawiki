@@ -1,5 +1,8 @@
 ---
 # tasks file for mediawiki
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: create directory
   file:
     path: "{{ mediawiki_destination }}"
