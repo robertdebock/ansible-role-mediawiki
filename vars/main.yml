@@ -1,5 +1,6 @@
 ---
 # vars file for mediawiki
+
 _mediawiki_requirements:
   default:
     - php-json
