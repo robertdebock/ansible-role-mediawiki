@@ -12,9 +12,6 @@
   package:
     name: "{{ mediawiki_requirements }}"
     state: present
-  register: mediawiki_install_mediawiki
-  until: mediawiki_install_mediawiki is succeeded
-  retries: 3
   notify:
     - restart httpd
 
