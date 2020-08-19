@@ -4,27 +4,32 @@
     that:
       - mediawiki_major is defined
       - mediawiki_major | int
+    quiet: yes
 
 - name: test if mediawiki_minor is set correctly
   assert:
     that:
       - mediawiki_minor is defined
       - mediawiki_minor | int
+    quiet: yes
 
 - name: test if mediawiki_release is set correctly
   assert:
     that:
       - mediawiki_release is defined
       - mediawiki_release | int
+    quiet: yes
 
 - name: test if mediawiki_version is set correctly
   assert:
     that:
       - mediawiki_version is defined
       - mediawiki_version | length > 0
+    quiet: yes
 
 - name: test if mediawiki_destination is set correctly
   assert:
     that:
       - mediawiki_destination is defined
       - mediawiki_destination | length > 0
+    quiet: yes
