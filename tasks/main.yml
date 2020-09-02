@@ -30,11 +30,11 @@
     src: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
     dest: "{{ mediawiki_destination }}/mediawiki"
     state: link
-    mode: "0750"
+    mode: "0755"
 
 - name: link mediawiki to docroot
   file:
     src: "{{ mediawiki_destination }}/mediawiki"
     dest: "{{ mediawiki_docroot }}/mediawiki"
     state: link
-    mode: "0750"
+    mode: "0755"
