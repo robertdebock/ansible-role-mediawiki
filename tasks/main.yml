@@ -7,7 +7,7 @@
   file:
     path: "{{ mediawiki_destination }}"
     state: directory
-    mode: "0750"
+    mode: "0755"
 
 - name: install requirements
   package:
@@ -23,7 +23,7 @@
     remote_src: yes
     creates: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
     setype: httpd_sys_script_rw_t
-    mode: "0750"
+    mode: "0755"
 
 - name: link mediawiki to versioned directory
   file:
@@ -32,9 +32,9 @@
     state: link
     mode: "0755"
 
-- name: link mediawiki to docroot
-  file:
-    src: "{{ mediawiki_destination }}/mediawiki"
-    dest: "{{ mediawiki_docroot }}/mediawiki"
-    state: link
-    mode: "0755"
+# - name: link mediawiki to docroot
+#   file:
+#     src: "{{ mediawiki_destination }}/mediawiki"
+#     dest: "{{ mediawiki_docroot }}/mediawiki"
+#     state: link
+#     mode: "0755"
