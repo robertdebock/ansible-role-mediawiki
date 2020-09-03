@@ -32,9 +32,9 @@
     state: link
     mode: "0755"
 
-# - name: link mediawiki to docroot
-#   file:
-#     src: "{{ mediawiki_destination }}/mediawiki"
-#     dest: "{{ mediawiki_docroot }}/mediawiki"
-#     state: link
-#     mode: "0755"
+- name: link mediawiki to docroot
+  file:
+    src: "{{ mediawiki_destination }}/mediawiki"
+    dest: "{{ mediawiki_docroot }}/mediawiki"
+    state: link
+    mode: "0755"
