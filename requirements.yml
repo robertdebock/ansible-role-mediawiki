@@ -1,10 +1,11 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.core_dependencies
-- robertdebock.epel
-- robertdebock.httpd
-- robertdebock.mysql
-- robertdebock.openssl
-- robertdebock.php
-- robertdebock.python_pip
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.buildtools
+  - name: robertdebock.core_dependencies
+  - name: robertdebock.epel
+  - name: robertdebock.httpd
+  - name: robertdebock.mysql
+  - name: robertdebock.openssl
+  - name: robertdebock.php
+  - name: robertdebock.python_pip
