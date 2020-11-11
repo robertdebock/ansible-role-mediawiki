@@ -3,21 +3,21 @@
   assert:
     that:
       - mediawiki_major is defined
-      - mediawiki_major | int
+      - mediawiki_major is number
     quiet: yes
 
 - name: test if mediawiki_minor is set correctly
   assert:
     that:
       - mediawiki_minor is defined
-      - mediawiki_minor | int
+      - mediawiki_minor is number
     quiet: yes
 
 - name: test if mediawiki_release is set correctly
   assert:
     that:
       - mediawiki_release is defined
-      - mediawiki_release | int
+      - mediawiki_release is number
     quiet: yes
 
 - name: test if mediawiki_version is set correctly
