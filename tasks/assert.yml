@@ -1,4 +1,5 @@
 ---
+
 - name: test if mediawiki_major is set correctly
   assert:
     that:
