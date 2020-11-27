@@ -25,10 +25,12 @@
   assert:
     that:
       - mediawiki_version is defined
+      - mediawiki_version is string
     quiet: yes
 
 - name: test if mediawiki_destination is set correctly
   assert:
     that:
       - mediawiki_destination is defined
+      - mediawiki_destination is string
     quiet: yes
