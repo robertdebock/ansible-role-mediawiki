@@ -7,20 +7,20 @@
   delegate_to: localhost
 
 - name: create directory
-  file:
+  ansible.builtin.file:
     path: "{{ mediawiki_destination }}"
     state: directory
     mode: "0755"
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ mediawiki_requirements }}"
     state: present
   notify:
     - restart httpd
 
 - name: install mediawiki
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ mediawiki_source }}"
     dest: "{{ mediawiki_destination }}"
     remote_src: yes
@@ -29,14 +29,14 @@
     mode: "0755"
 
 - name: link mediawiki to versioned directory
-  file:
+  ansible.builtin.file:
     src: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
     dest: "{{ mediawiki_destination }}/mediawiki"
     state: link
     mode: "0755"
 
 - name: link mediawiki to docroot
-  file:
+  ansible.builtin.file:
     src: "{{ mediawiki_destination }}/mediawiki"
     dest: "{{ mediawiki_docroot }}/mediawiki"
     state: link
