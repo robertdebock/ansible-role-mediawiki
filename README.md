@@ -61,7 +61,7 @@ These variables are set in `defaults/main.yml`:
 
 # The version (major.minor.release) to install.
 mediawiki_major: 1
-mediawiki_minor: 31
+mediawiki_minor: 35
 mediawiki_release: 1
 
 mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_release }}"
