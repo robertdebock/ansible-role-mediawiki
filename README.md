@@ -113,10 +113,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|el|8|
 |debian|buster, bullseye|
 |fedora|all|
-|ubuntu|focal, bionic|
+|ubuntu|focal|
 
 The minimum version of Ansible required is 2.10, tests have been done to:
 
@@ -130,7 +129,8 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| centos:7 | PHP is too old for mediawiki 1.31.1. |
+| centos | PHP is too old for mediawiki. |
+| ubuntu:bionic | PHP is too old for mediawiki. |
 
 ## [Included version(s)](#included-versions)
 

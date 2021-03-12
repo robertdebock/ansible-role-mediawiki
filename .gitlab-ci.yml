@@ -16,8 +16,6 @@ molecule:
   retry: 1
   parallel:
     matrix:
-      - image: "centos"
-        tag: "latest"
       - image: "debian"
         tag: "latest"
       - image: "debian"
@@ -28,8 +26,6 @@ molecule:
         tag: "latest"
       - image: "ubuntu"
         tag: "latest"
-      - image: "ubuntu"
-        tag: "bionic"
 
 galaxy:
   script:
