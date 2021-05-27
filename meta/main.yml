@@ -25,5 +25,4 @@ galaxy_info:
     - server
     - system
 
-dependencies:
-  - robertdebock.httpd
+dependencies: []
