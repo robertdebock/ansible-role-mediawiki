@@ -7,6 +7,6 @@
   tasks:
     - name: connect to mediawiki
       ansible.builtin.get_url:
-        url: https://localhost/mediawiki
+        url: http://localhost/mediawiki
         dest: /tmp/whatever
         validate_certs: no
