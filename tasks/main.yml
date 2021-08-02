@@ -24,9 +24,12 @@
     src: "{{ mediawiki_source }}"
     dest: "{{ mediawiki_destination }}"
     remote_src: yes
-    creates: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+    creates: "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}"
     setype: httpd_sys_script_rw_t
     mode: "0755"
+
+- name: rename mediawiki directory
+  command: mv "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}" "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
 
 - name: link mediawiki to versioned directory
   ansible.builtin.file:
