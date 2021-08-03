@@ -30,6 +30,7 @@
 
 - name: rename mediawiki directory
   command: mv "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}" "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+  when: mediawiki_name != "mediawiki"
 
 - name: link mediawiki to versioned directory
   ansible.builtin.file:
