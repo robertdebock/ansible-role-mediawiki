@@ -28,6 +28,17 @@
     setype: httpd_sys_script_rw_t
     mode: "0755"
 
+- name: is MediaWiki dir present?
+  stat:
+    path: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+  register: stat_mediawiki_dir
+
+- name: discard existing MediaWiki dir
+  file:
+    path: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+    state: absent
+  when: stat_mediawiki_dir
+
 - name: rename mediawiki directory
   command: mv "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}" "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
   when: mediawiki_name != "mediawiki"
