@@ -32,6 +32,7 @@
   stat:
     path: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
   register: stat_mediawiki_dir
+  when: mediawiki_name != "mediawiki"
 
 - name: discard existing MediaWiki dir
   file:
