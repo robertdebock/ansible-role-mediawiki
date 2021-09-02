@@ -34,3 +34,10 @@
       - mediawiki_destination is defined
       - mediawiki_destination is string
     quiet: yes
+
+- name: test if mediawiki_name is set correctly
+  ansible.builtin.assert:
+    that:
+      - mediawiki_name is defined
+      - mediawiki_name is string
+    quiet: yes
