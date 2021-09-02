@@ -38,7 +38,9 @@
   file:
     path: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
     state: absent
-  when: stat_mediawiki_dir
+  when:
+    - stat_mediawiki_dir
+    - mediawiki_name != "mediawiki"
 
 - name: rename mediawiki directory
   command: mv "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}" "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
