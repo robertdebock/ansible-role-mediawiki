@@ -21,3 +21,6 @@ mediawiki_name_prefix: "wiki-"
 
 # The wiki's name used in directories and links
 mediawiki_name: "mediawiki"
+
+# Compile install path variable
+mediawiki_install_path: "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}"
