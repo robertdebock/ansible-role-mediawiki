@@ -55,7 +55,7 @@
 
 - name: link mediawiki to docroot
   ansible.builtin.file:
-    src: "{{ mediawiki_destination }}/{{ mediawiki_name }}"
+    src: "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}"
     dest: "{{ mediawiki_docroot }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}"
     state: link
     mode: "0755"
