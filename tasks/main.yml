@@ -48,7 +48,7 @@
 
 - name: link mediawiki to versioned directory
   ansible.builtin.file:
-    src: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+    src: "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}-{{ mediawiki_version }}"
     dest: "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}"
     state: link
     mode: "0755"
