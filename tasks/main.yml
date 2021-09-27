@@ -30,33 +30,33 @@
 
 - name: is MediaWiki dir present?
   stat:
-    path: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+    path: "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}-{{ mediawiki_version }}"
   register: stat_mediawiki_dir
   when: mediawiki_name != "mediawiki"
 
 - name: discard existing MediaWiki dir
   file:
-    path: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+    path: "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}-{{ mediawiki_version }}"
     state: absent
   when:
     - stat_mediawiki_dir
     - mediawiki_name != "mediawiki"
 
 - name: rename mediawiki directory
-  command: mv "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}" "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
+  command: mv "{{ mediawiki_destination }}/mediawiki-{{ mediawiki_version }}" "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}-{{ mediawiki_version }}"
   when: mediawiki_name != "mediawiki"
 
 - name: link mediawiki to versioned directory
   ansible.builtin.file:
     src: "{{ mediawiki_destination }}/{{ mediawiki_name }}-{{ mediawiki_version }}"
-    dest: "{{ mediawiki_destination }}/{{ mediawiki_name }}"
+    dest: "{{ mediawiki_destination }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}"
     state: link
     mode: "0755"
 
 - name: link mediawiki to docroot
   ansible.builtin.file:
     src: "{{ mediawiki_destination }}/{{ mediawiki_name }}"
-    dest: "{{ mediawiki_docroot }}/{{ mediawiki_name }}"
+    dest: "{{ mediawiki_docroot }}/{{ mediawiki_name_prefix }}{{ mediawiki_name }}"
     state: link
     mode: "0755"
   when: mediawiki_destination != mediawiki_docroot

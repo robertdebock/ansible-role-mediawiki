@@ -16,5 +16,8 @@ mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_rel
 
 mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
 
+# The wiki's name prefix used in directories and links
+mediawiki_name_prefix: "wiki-"
+
 # The wiki's name used in directories and links
 mediawiki_name: "mediawiki"

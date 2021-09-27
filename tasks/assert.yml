@@ -35,6 +35,13 @@
       - mediawiki_destination is string
     quiet: yes
 
+- name: test if mediawiki_name_prefix is set correctly
+  ansible.builtin.assert:
+    that:
+      - mediawiki_name_prefix is defined
+      - mediawiki_name_prefix is string
+    quiet: yes
+
 - name: test if mediawiki_name is set correctly
   ansible.builtin.assert:
     that:
