@@ -44,5 +44,5 @@ _mediawiki_owner:
   Debian: www-data
   Suse: wwwrun
 
-mediawiki_owner: "{{ _mediawiki_owner[ansible_os_family | default(_mediawiki_owner['default'] ) ] }}"
-mediawiki_group: "{{ _mediawiki_owner[ansible_os_family | default(_mediawiki_owner['default'] ) ] }}"
+mediawiki_owner: "{{ _mediawiki_owner[ansible_os_family] | default(_mediawiki_owner['default'] ) }}"
+mediawiki_group: "{{ _mediawiki_owner[ansible_os_family] | default(_mediawiki_owner['default'] ) }}"
