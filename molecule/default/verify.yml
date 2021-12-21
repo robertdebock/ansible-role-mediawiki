@@ -9,4 +9,3 @@
       ansible.builtin.get_url:
         url: http://localhost/mediawiki
         dest: /tmp/whatever
-        validate_certs: no
