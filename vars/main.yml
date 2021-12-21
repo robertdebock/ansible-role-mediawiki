@@ -3,26 +3,31 @@
 
 _mediawiki_requirements:
   default:
+    - php-intl
     - php-json
     - php-mbstring
     - php-xml
     - php-mysql
   Alpine:
+    - php-intl
     - php-json
     - php-mysqli
     - php-mbstring
     - php-xml
   Fedora:
+    - php-intl
     - php-json
     - php-mbstring
     - php-pdo_mysql
     - php-xml
   CentOS-7:
+    - php-intl
     - php-json
     - php-mbstring
     - php-mysql
     - php-xml
   CentOS:
+    - php-intl
     - php-json
     - php-mbstring
     - php-mysqlnd
