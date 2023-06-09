@@ -26,6 +26,7 @@
     that:
       - mediawiki_version is defined
       - mediawiki_version is string
+      - mediawiki_version is not none
     quiet: yes
 
 - name: assert | Test if mediawiki_destination is set correctly
@@ -33,4 +34,5 @@
     that:
       - mediawiki_destination is defined
       - mediawiki_destination is string
+      - mediawiki_destination is not none
     quiet: yes
