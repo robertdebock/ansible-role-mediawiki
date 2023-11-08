@@ -2,9 +2,9 @@
 
 Install and configure mediawiki on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-mediawiki/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-mediawiki/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-mediawiki/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-mediawiki)|[![quality](https://img.shields.io/ansible/quality/29572)](https://galaxy.ansible.com/robertdebock/mediawiki)|[![downloads](https://img.shields.io/ansible/role/d/29572)](https://galaxy.ansible.com/robertdebock/mediawiki)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-mediawiki.svg)](https://github.com/robertdebock/ansible-role-mediawiki/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-mediawiki/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-mediawiki/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-mediawiki/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-mediawiki)|[![downloads](https://img.shields.io/ansible/role/d/24535)](https://galaxy.ansible.com/robertdebock/mediawiki)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-mediawiki.svg)](https://github.com/robertdebock/ansible-role-mediawiki/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -127,7 +127,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-mediawiki/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-mediawiki/issues).
 
 ## [License](#license)
 
