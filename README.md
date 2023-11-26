@@ -1,4 +1,4 @@
-# Ansible role [mediawiki](#mediawiki)
+# [Ansible role mediawiki](#mediawiki)
 
 Install and configure mediawiki on your system.
 
