@@ -28,6 +28,8 @@ molecule:
       - image: "fedora"
         tag: "latest"
       - image: "ubuntu"
+        tag: "latest"
+      - image: "ubuntu"
         tag: "focal"
 
 galaxy:
