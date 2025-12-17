@@ -29,8 +29,6 @@ molecule:
         tag: "latest"
       - image: "ubuntu"
         tag: "latest"
-      - image: "ubuntu"
-        tag: "focal"
 
 galaxy:
   image: python:3.13
