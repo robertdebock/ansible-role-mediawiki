@@ -17,7 +17,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - noble
-        - focal
 
   galaxy_tags:
     - mediawiki
