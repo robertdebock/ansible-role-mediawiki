@@ -40,7 +40,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: robertdebock.openssl
       openssl_items:
         - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
+          common_name: "{{ ansible_facts['fqdn'] }}"
     - role: robertdebock.httpd
     - role: robertdebock.php
     - role: robertdebock.mysql
@@ -71,11 +71,11 @@ mediawiki_version: "{{ mediawiki_major }}.{{ mediawiki_minor }}.{{ mediawiki_rel
 
 # Where to install mediawiki. You can use this pattern to install to a default
 # location that differs per distribution, see `vars/main.yml`:
-# "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default'] ) }}"
+# "{{ _mediawiki_destination[ansible_facts['distribution']] | default(_mediawiki_destination['default'] ) }}"
 # Change this to a simple string that refers to a path, for example:
 # "/data/mediawiki".
 
-mediawiki_destination: "{{ _mediawiki_destination[ansible_distribution] | default(_mediawiki_destination['default']) }}"
+mediawiki_destination: "{{ _mediawiki_destination[ansible_facts['distribution']] | default(_mediawiki_destination['default']) }}"
 ```
 
 ## [Requirements](#requirements)
