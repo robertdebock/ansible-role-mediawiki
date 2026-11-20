@@ -1,0 +1,25 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "mediawiki" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.buildtools" [fillcolor=green style=filled]
+    "robertdebock.core_dependencies" [fillcolor=green style=filled]
+    "robertdebock.epel" [fillcolor=green style=filled]
+    "robertdebock.httpd" [fillcolor=green style=filled]
+    "robertdebock.mysql" [fillcolor=green style=filled]
+    "robertdebock.openssl" [fillcolor=green style=filled]
+    "robertdebock.php" [fillcolor=green style=filled]
+    "robertdebock.python_pip" [fillcolor=green style=filled]
+  }
+  "mediawiki" -> "robertdebock.bootstrap"
+  "mediawiki" -> "robertdebock.buildtools"
+  "mediawiki" -> "robertdebock.core_dependencies"
+  "mediawiki" -> "robertdebock.epel"
+  "mediawiki" -> "robertdebock.httpd"
+  "mediawiki" -> "robertdebock.mysql"
+  "mediawiki" -> "robertdebock.openssl"
+  "mediawiki" -> "robertdebock.php"
+  "mediawiki" -> "robertdebock.python_pip"
+}
